@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一个边长为30px的等边三角形,转圈圈</title>
+    <style>
+        @keyframes followMove {
+            0%{border-color:red;}
+            25%{border-color: yellow;}
+            50%{border-color:blue;}
+            75%{border-color:green;}
+            100%{border-color:red;}
+        }
+        .box{
+            -webkit-animation:followMove 5s infinite;
+            -o-animation:followMove 5s infinite;
+            animation:followMove 5s infinite;
+            width:200px;height:200px;position:relative;border:1px solid red;margin: 0 auto;
+        }
+        @keyframes move {
+            0%{left:-50%;top:0;border-bottom-color: red;}
+            25%{left:50%;top:0;border-bottom-color: yellow;}
+            50%{left:50%;top:100%;border-bottom-color: blue;}
+            75%{left:-50%;top:100%;border-bottom-color: green;}
+            100%{left:-50%;top:0;border-bottom-color: red;}
+        }
+        .triangle{
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 100px solid red;
+            position:absolute;
+            -webkit-animation: move 5s infinite;
+            -o-animation: move 5s infinite;
+            animation: move 5s infinite;
+        }
+    </style>
+</head>
+<body>
+<p>使用div元素创立一个边长为30px的等边三角形（尖朝上），
+    让该等边三角形以5秒为周期重复的沿着边长为200px的正方形做顺时针运动，
+    起始颜色为红色，到右上角时平滑的渐变为黄色，到右下角时渐变为蓝色，
+    到左下角时渐变为绿色；请兼容Firefox、Safari、Chrome、Opera浏览器</p>
+<div class="box">
+    <div class="triangle">
+    </div>
+</div>
+</body>
+</html>
